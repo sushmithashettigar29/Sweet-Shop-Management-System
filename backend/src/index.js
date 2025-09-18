@@ -3,9 +3,11 @@ const express = require("express");
 const app = express();
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/auth");
+const sweetRoutes = require("./routes/sweets");
 
 app.use(express.json());
 app.use("/api/auth", authRoutes);
+app.use("/api/sweets", sweetRoutes);
 
 // Only start server & connect DB if not testing
 if (process.env.NODE_ENV !== "test") {
