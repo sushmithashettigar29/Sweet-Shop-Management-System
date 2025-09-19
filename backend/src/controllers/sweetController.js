@@ -86,6 +86,7 @@ exports.purchaseSweet = async (req, res) => {
   try {
     const { id } = req.params;
     const { quantity } = req.body;
+    const userId = req.user.id; // 👈 ensure your auth middleware sets req.user
 
     if (!quantity || quantity <= 0) {
       return res.status(400).json({ error: "Quantity must be greater than 0" });
@@ -98,15 +99,37 @@ exports.purchaseSweet = async (req, res) => {
       return res.status(400).json({ error: "Insufficient stock" });
     }
 
+    // Decrease stock
     sweet.quantity -= quantity;
     await sweet.save();
 
-    res.status(200).json({ message: "Purchase successful", data: sweet });
+    // Save purchase in user's profile
+    const User = require("../models/User");
+    const user = await User.findById(userId);
+
+    user.purchases.push({
+      name: sweet.name,
+      price: sweet.price,
+      quantity,
+      date: new Date(),
+    });
+
+    await user.save();
+
+    res.status(200).json({
+      message: "Purchase successful",
+      data: {
+        sweet: sweet.name,
+        quantity,
+        remainingStock: sweet.quantity,
+      },
+    });
   } catch (error) {
-    console.error(error);
+    console.error("Purchase error:", error);
     res.status(500).json({ error: "Server error" });
   }
 };
+
 
 // Restock sweet (Admin)
 exports.restockSweet = async (req, res) => {

@@ -9,21 +9,20 @@ const {
   deleteSweet,
   purchaseSweet,
   restockSweet,
-  getSweetById
+  getSweetById,
 } = require("../controllers/sweetController");
 const { protect, admin } = require("../middleware/authMiddleware");
 
-// Admin-only routes
+// 🟢 User routes (authenticated)
+router.get("/", protect, getSweets);
+router.get("/search", protect, searchSweets);
+router.get("/:id", protect, getSweetById);
+router.post("/:id/purchase", protect, purchaseSweet);
+
+// 🔴 Admin-only routes
 router.post("/", protect, admin, addSweet);
 router.put("/:id", protect, admin, updateSweet);
 router.delete("/:id", protect, admin, deleteSweet);
 router.post("/:id/restock", protect, admin, restockSweet);
-
-router.get("/:id",protect, getSweetById);
-
-// User routes (authenticated)
-router.get("/", protect, getSweets);
-router.get("/search", protect, searchSweets);
-router.post("/:id/purchase", protect, purchaseSweet);
 
 module.exports = router;
