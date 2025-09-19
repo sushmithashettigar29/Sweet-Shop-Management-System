@@ -9,6 +9,7 @@ const {
   deleteSweet,
   purchaseSweet,
   restockSweet,
+  getSweetById
 } = require("../controllers/sweetController");
 const { protect, admin } = require("../middleware/authMiddleware");
 
@@ -17,6 +18,8 @@ router.post("/", protect, admin, addSweet);
 router.put("/:id", protect, admin, updateSweet);
 router.delete("/:id", protect, admin, deleteSweet);
 router.post("/:id/restock", protect, admin, restockSweet);
+
+router.get("/:id",protect, getSweetById);
 
 // User routes (authenticated)
 router.get("/", protect, getSweets);
