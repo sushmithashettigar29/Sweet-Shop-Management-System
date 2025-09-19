@@ -6,6 +6,7 @@ const sweetSchema = new mongoose.Schema(
     category: { type: String },
     price: { type: Number, required: true },
     quantity: { type: Number, default: 0 },
+    image: { type: String }
   },
   { timestamps: true }
 );

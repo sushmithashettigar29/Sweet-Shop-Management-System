@@ -3,13 +3,13 @@ const Sweet = require("../models/Sweet");
 // Add a new sweet (Admin)
 exports.addSweet = async (req, res) => {
   try {
-    const { name, category, price, quantity } = req.body;
+    const { name, category, price, quantity, image } = req.body;
 
     if (!name || !price) {
       return res.status(400).json({ error: "Name and price are required" });
     }
 
-    const sweet = await Sweet.create({ name, category, price, quantity });
+    const sweet = await Sweet.create({ name, category, price, quantity, image });
     res.status(201).json({ message: "Sweet added successfully", data: sweet });
   } catch (error) {
     console.error(error);
@@ -111,6 +111,7 @@ exports.purchaseSweet = async (req, res) => {
       name: sweet.name,
       price: sweet.price,
       quantity,
+      image: sweet.image,
       date: new Date(),
     });
 
