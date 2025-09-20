@@ -103,7 +103,7 @@ const Profile = () => {
                         {sweet.name}
                       </h3>
                       <p className="text-lg font-bold text-[#8B2321]">
-                        ₹{sweet.price}
+                        ₹{sweet.total}
                       </p>
                     </div>
                     <p className="text-gray-600 text-sm">
