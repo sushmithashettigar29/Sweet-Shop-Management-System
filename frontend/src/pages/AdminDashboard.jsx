@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 
   const fetchSweets = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/sweets", {
+      const res = await axios.get("https://backend-nine-zeta-55.vercel.app/api/sweets", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSweets(res.data.data);
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
       if (minPrice) params.minPrice = minPrice;
       if (maxPrice) params.maxPrice = maxPrice;
 
-      const res = await axios.get("http://localhost:5000/api/sweets/search", {
+      const res = await axios.get("https://backend-nine-zeta-55.vercel.app/api/sweets/search", {
         params,
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -79,7 +79,7 @@ const AdminDashboard = () => {
     const deleteSweet = async (id) => {
     if (!window.confirm("Are you sure you want to delete this sweet?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/sweets/${id}`, {
+      await axios.delete(`https://backend-nine-zeta-55.vercel.app/api/sweets/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessage("📦 Sweet deleted successfully");
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
     if (!qty || isNaN(qty)) return;
     try {
       await axios.post(
-        `http://localhost:5000/api/sweets/${id}/restock`,
+        `https://backend-nine-zeta-55.vercel.app/api/sweets/${id}/restock`,
         { quantity: Number(qty) },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // your backend base URL
+  baseURL: "https://backend-nine-zeta-55.vercel.app/api", // your backend base URL
 });
 
 // Attach token automatically

@@ -10,7 +10,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchPurchases = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/auth/me", {
+        const res = await axios.get("https://backend-nine-zeta-55.vercel.app/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setPurchases(res.data.purchases || []);

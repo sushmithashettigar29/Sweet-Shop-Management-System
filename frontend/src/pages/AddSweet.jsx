@@ -31,7 +31,7 @@ const AddSweet = () => {
 
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/sweets", form, {
+      await axios.post("https://backend-nine-zeta-55.vercel.app/api/sweets", form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessage("✅ Sweet added successfully");

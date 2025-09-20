@@ -9,7 +9,7 @@ const PopularSweets = ({text}) => {
   useEffect(() => {
     const fetchSweets = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/sweets");
+        const res = await axios.get("https://backend-nine-zeta-55.vercel.app/api/sweets");
         const latestFour = res.data.data
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
           .slice(0, 4);

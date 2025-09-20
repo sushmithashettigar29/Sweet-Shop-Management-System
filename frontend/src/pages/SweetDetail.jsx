@@ -16,7 +16,7 @@ const SweetDetail = () => {
   useEffect(() => {
     const fetchSweet = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/sweets/${id}`, {
+        const res = await axios.get(`https://backend-nine-zeta-55.vercel.app/api/sweets/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSweet(res.data.data || res.data);
@@ -32,7 +32,7 @@ const SweetDetail = () => {
   const handlePurchase = async () => {
     try {
       await axios.post(
-        `http://localhost:5000/api/sweets/${id}/purchase`,
+        `https://backend-nine-zeta-55.vercel.app/api/sweets/${id}/purchase`,
         { quantity },
         { headers: { Authorization: `Bearer ${token}` } }
       );
