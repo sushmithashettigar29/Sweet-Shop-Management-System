@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import WaveBottom from "./WaveBottom";
+import { useState } from "react";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -47,7 +46,7 @@ const ContactUs = () => {
   return (
     <div className="relative font-sans">
       <section className="py-16 px-6 sm:px-12 md:px-24 bg-[#FDF0D5]">
-        <div className="relative w-full md:w-3/4 max-w-5xl mx-auto flex flex-col md:flex-row overflow-hidden z-10 mb-35">
+        <div className="relative w-full md:w-3/4 max-w-5xl mx-auto flex flex-col md:flex-row overflow-hidden z-10">
           {/* Left side with contact info */}
           <div className="w-full md:w-2/5 p-8 text-white bg-[#8B2321] flex flex-col justify-center">
             <div className="space-y-6">
@@ -125,7 +124,9 @@ const ContactUs = () => {
 
           {/* Right side with form */}
           <div className="w-full md:w-3/5 p-8 md:p-12 bg-white">
-            <h3 className="text-3xl font-bold text-[#8B2321] mb-6">CONTACT US</h3>
+            <h3 className="text-3xl font-bold text-[#8B2321] mb-6">
+              CONTACT US
+            </h3>
             {submitSuccess && (
               <div
                 className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
@@ -189,7 +190,6 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
-      <WaveBottom />
     </div>
   );
 };

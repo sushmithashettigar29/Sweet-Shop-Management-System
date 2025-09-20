@@ -1,8 +1,6 @@
-import React from "react";
-
 const Footer = () => {
   return (
-    <footer className="font-sans text-[#FCE4EC] bg-[#8B2321] body-font">
+    <footer className="font-sans text-[#FCE4EC] bg-[#8B2321] body-font pt-12">
       {/* Top Banner Section */}
       <div className="bg-[#FFC0CB] py-10 px-6 sm:px-12 md:px-24 flex flex-col md:flex-row justify-between items-center text-[#8B2321] rounded-4xl mx-10">
         <div className="text-center md:text-left mb-6 md:mb-0">
@@ -21,8 +19,10 @@ const Footer = () => {
               text-base outline-none text-[#8B2321] py-2 px-3 leading-8 transition-colors
               duration-200 ease-in-out mb-3 sm:mb-0 sm:mr-3"
           />
-          <button className="inline-flex text-white bg-[#8B2321] border-0 py-2 px-6
-            focus:outline-none hover:bg-[#FFC0CB] rounded-full font-semibold transition-colors duration-200 shadow-md">
+          <button
+            className="inline-flex text-white bg-[#8B2321] border-0 py-2 px-6
+            focus:outline-none hover:bg-[#FFC0CB] rounded-full font-semibold transition-colors duration-200 shadow-md"
+          >
             Subscribe
           </button>
         </div>
@@ -33,27 +33,71 @@ const Footer = () => {
           {/* Logo and Link Columns */}
           <div className="flex flex-col md:flex-row md:space-x-16 w-full md:w-auto">
             <div className="mb-8 md:mb-0">
-              <h1 className="text-5xl font-extrabold text-[#FFDAB9] mb-2">Sweet.</h1>
+              <h1 className="text-5xl font-extrabold text-[#FFDAB9] mb-2">
+                Sweet.
+              </h1>
             </div>
             {/* Link Columns */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 w-full md:w-auto">
               <ul className="space-y-3">
-                <li><h3 className="font-bold text-white mb-2">Shop</h3></li>
-                <li><a href="#" className="hover:text-white transition-colors">All Sweets</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Categories</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Seasonal Treats</a></li>
+                <li>
+                  <h3 className="font-bold text-white mb-2">Shop</h3>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    All Sweets
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Categories
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Seasonal Treats
+                  </a>
+                </li>
               </ul>
               <ul className="space-y-3">
-                <li><h3 className="font-bold text-white mb-2">Company</h3></li>
-                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Our Story</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li>
+                  <h3 className="font-bold text-white mb-2">Company</h3>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Our Story
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Contact
+                  </a>
+                </li>
               </ul>
               <ul className="space-y-3">
-                <li><h3 className="font-bold text-white mb-2">Support</h3></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQs</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Shipping & Returns</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">My Account</a></li>
+                <li>
+                  <h3 className="font-bold text-white mb-2">Support</h3>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    FAQs
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Shipping & Returns
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    My Account
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -67,8 +111,6 @@ const Footer = () => {
             </h2>
           </div>
         </div>
-        {/* Divider */}
-        <hr className="border-t border-[#A84A47] my-10" />
       </div>
       {/* Bottom Section */}
       <div className="bg-[#8B2321] border-t border-[#A84A47] py-6 px-6 sm:px-12 md:px-24 flex flex-col-reverse md:flex-row justify-between items-center text-sm">
@@ -84,40 +126,76 @@ const Footer = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
             </svg>
           </button>
           <div className="flex flex-col md:flex-row md:space-x-6 text-[#FFDAB9]">
-            <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">
+            <a
+              href="#"
+              className="hover:text-white transition-colors mb-2 md:mb-0"
+            >
               Cookies Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">
+            <a
+              href="#"
+              className="hover:text-white transition-colors mb-2 md:mb-0"
+            >
               Legal Terms
             </a>
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors">
-              My AI Usage
-            </a>
           </div>
         </div>
         {/* Social Icons */}
         <div className="flex space-x-6 text-2xl">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-            <svg className="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition-colors"
+          >
+            <svg
+              className="w-6 h-6 inline-block"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
             </svg>
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-             <svg className="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition-colors"
+          >
+            <svg
+              className="w-6 h-6 inline-block"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
             </svg>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-            <svg className="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition-colors"
+          >
+            <svg
+              className="w-6 h-6 inline-block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
             </svg>
           </a>
         </div>
