@@ -29,7 +29,7 @@ const Navbar = () => {
           <Link to="/" className="text-[#FFDAB9] hover:text-white transition-colors">
             Home
           </Link>
-          <Link to="/sweets" className="text-[#FFDAB9] hover:text-white transition-colors">
+          <Link to="/all-sweets" className="text-[#FFDAB9] hover:text-white transition-colors">
             All Sweets
           </Link>
           <Link to="/about" className="text-[#FFDAB9] hover:text-white transition-colors">
@@ -46,9 +46,6 @@ const Navbar = () => {
                   Admin
                 </Link>
               )}
-              <Link to="/dashboard" className="text-[#FFDAB9] hover:text-white transition-colors">
-                Dashboard
-              </Link>
               <Link to="/profile" className="text-[#FFDAB9] hover:text-white transition-colors">
                 Profile
               </Link>
