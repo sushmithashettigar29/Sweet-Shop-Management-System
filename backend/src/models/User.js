@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
       price: Number,
       quantity: Number,
       image: String,
+      total:Number,
       date: { type: Date, default: Date.now },
     },
   ],
