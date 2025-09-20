@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
-import SweetCard from "../components/SweetCard"; // import SweetCard
+import SweetCard from "../components/SweetCard";
 
 const AllSweets = () => {
   const [sweets, setSweets] = useState([]);
