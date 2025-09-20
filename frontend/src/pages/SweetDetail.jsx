@@ -38,7 +38,7 @@ const SweetDetail = () => {
       );
       setMessage("✅ Purchase successful!");
       // Redirect after a short delay to allow the user to see the success message
-      setTimeout(() => navigate("/dashboard"), 1500);
+      setTimeout(() => navigate("/profile"), 1500);
     } catch (err) {
       console.error("Error purchasing:", err);
       setMessage("❌ Failed to purchase. Maybe stock is low.");
