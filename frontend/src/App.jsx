@@ -15,6 +15,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import SweetDetail from "./pages/SweetDetail";
 import AllSweets from "./pages/AllSweets";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path="/sweets/:id" element={<SweetDetail />} />
         <Route path="/all-sweets" element={<AllSweets/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="/about" element={<About/>}/>
 
         {/* Catch all */}
         <Route path="*" element={<Navigate to="/" />} />
