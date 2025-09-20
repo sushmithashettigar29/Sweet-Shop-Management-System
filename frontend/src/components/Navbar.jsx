@@ -108,7 +108,7 @@ const Navbar = () => {
           <Link onClick={toggleMenu} to="/" className="text-[#FFDAB9] hover:text-white transition-colors">
             Home
           </Link>
-          <Link onClick={toggleMenu} to="/sweets" className="text-[#FFDAB9] hover:text-white transition-colors">
+          <Link onClick={toggleMenu} to="/all-sweets" className="text-[#FFDAB9] hover:text-white transition-colors">
             All Sweets
           </Link>
           <Link onClick={toggleMenu} to="/about" className="text-[#FFDAB9] hover:text-white transition-colors">
