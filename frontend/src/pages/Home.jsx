@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <Hero/>
-      <PopularSweets/>
+      <PopularSweets text = "Popular Sweets"/>
       <AboutUs />
       <ContactUs/>
     </div>
