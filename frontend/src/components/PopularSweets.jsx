@@ -26,18 +26,18 @@ const PopularSweets = ({text}) => {
     <section className="py-16 px-6 sm:px-12 md:px-24 bg-[#FDF0D5]">
       <div className="container mx-auto">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-[#8B2321] text-center mb-10">
-          🍪 {text}
+          {text}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {sweets.map((sweet) => (
             <div
               key={sweet._id}
-              className="bg-white rounded-none shadow-xl p-4 transform transition-transform duration-300 hover:scale-105"
+              className="bg-white rounded-none shadow-xl p-4 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
             >
               <img
                 src={sweet.image || "https://placehold.co/400x550/F5C7A9/8B2321?text=Sweet"}
                 alt={sweet.name}
-                className="w-full h-56 object-cover rounded-none mb-4 shadow-md sm:h-64"
+                className="w-full h-56 object-cover  mb-4 sm:h-64"
               />
               <div className="flex justify-between items-center mb-2">
                 <h3 className="text-xl font-bold text-[#8B2321]">{sweet.name}</h3>
@@ -56,12 +56,12 @@ const PopularSweets = ({text}) => {
                 <button
                   onClick={() => navigate(`/sweets/${sweet._id}`)}
                   disabled={sweet.quantity === 0}
-                  className={`px-4 py-2 rounded-full font-semibold transition-colors
+                  className={`px-4 py-2 rounded-full font-semibold transition-colors cursor-pointer
                              ${sweet.quantity > 0
-                              ? "bg-[#8B2321] text-white hover:bg-[#6e1c1a] shadow-lg"
+                              ? "bg-[#8B2321] text-white shadow-lg"
                               : "bg-gray-400 text-gray-700 cursor-not-allowed"}`}
                 >
-                  View & Buy
+                  View
                 </button>
               </div>
             </div>

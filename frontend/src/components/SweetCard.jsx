@@ -4,7 +4,7 @@ const SweetCard = ({ sweet }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white rounded-none shadow-xl p-4 transform transition-transform duration-300 hover:scale-105">
+    <div className="bg-white rounded-none shadow-xl p-4 transform transition-transform duration-300 hover:scale-105 cursor-pointer">
       <img
         src={sweet.image || "https://placehold.co/400x550/F5C7A9/8B2321?text=Sweet"}
         alt={sweet.name}
@@ -26,13 +26,13 @@ const SweetCard = ({ sweet }) => {
         <button
           onClick={() => navigate(`/sweets/${sweet._id}`)}
           disabled={sweet.quantity === 0}
-          className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+          className={`px-4 py-2 rounded-full font-semibold cursor-pointer transition-colors ${
             sweet.quantity > 0
               ? "bg-[#8B2321] text-white hover:bg-[#6e1c1a] shadow-lg"
               : "bg-gray-400 text-gray-700 cursor-not-allowed"
           }`}
         >
-          View & Buy
+          View
         </button>
       </div>
     </div>

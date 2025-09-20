@@ -42,7 +42,7 @@ const Profile = () => {
       <div className=" mx-auto p-8 ">
         {/* Profile Header */}
         <div className="flex flex-col md:flex-row items-center md:space-x-8 text-center md:text-left mb-12 border-b-2 border-[#8B2321] pb-8">
-          <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#FFC7AE] rounded-full flex items-center justify-center text-white text-5xl sm:text-6xl font-extrabold mb-4 md:mb-0">
+          <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#8B2321] rounded-full flex items-center justify-center text-white text-5xl sm:text-6xl font-extrabold mb-4 md:mb-0">
             {userInitial}
           </div>
           <div>
@@ -50,7 +50,7 @@ const Profile = () => {
               {user.username}
             </h2>
             <p className="text-lg text-gray-600">
-              Welcome to your profile.
+              Welcome to your profile, find your purchases.
             </p>
           </div>
         </div>

@@ -64,7 +64,7 @@ const AboutUs = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Box 1 */}
-          <div className="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
             <h3 className="text-2xl font-bold text-[#8B2321] mb-4">
               Quality Ingredients
             </h3>
@@ -73,7 +73,7 @@ const AboutUs = () => {
             </p>
           </div>
           {/* Box 2 */}
-          <div className="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
             <h3 className="text-2xl font-bold text-[#8B2321] mb-4">
               Handcrafted with Love
             </h3>
@@ -82,7 +82,7 @@ const AboutUs = () => {
             </p>
           </div>
           {/* Box 3 */}
-          <div className="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
             <h3 className="text-2xl font-bold text-[#8B2321] mb-4">
               Unique Flavors
             </h3>
@@ -92,7 +92,7 @@ const AboutUs = () => {
             </p>
           </div>
           {/* Box 4 */}
-          <div className="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
             <h3 className="text-2xl font-bold text-[#8B2321] mb-4">
               Customer Delight
             </h3>

@@ -95,7 +95,7 @@ const ContactUs = () => {
                 </svg>
                 <div>
                   <h4 className="text-xl font-bold">LOCATION</h4>
-                  <p className="text-sm">Sweet Street, Karkala</p>
+                  <p className="text-sm">Sweet Street, USA</p>
                 </div>
               </div>
               {/* BUSINESS HOURS */}
@@ -124,8 +124,8 @@ const ContactUs = () => {
 
           {/* Right side with form */}
           <div className="w-full md:w-3/5 p-8 md:p-12 bg-white">
-            <h3 className="text-3xl font-bold text-[#8B2321] mb-6">
-              CONTACT US
+            <h3 className="text-4xl sm:text-5xl font-extrabold text-[#8B2321] mb-12 leading-tight tracking-tight">
+              Contact Us
             </h3>
             {submitSuccess && (
               <div
@@ -184,7 +184,7 @@ const ContactUs = () => {
                 type="submit"
                 className="w-full px-6 py-3 border-2 border-[#8B2321] text-white font-semibold bg-[#8B2321] cursor-pointer"
               >
-                SUBMIT
+                Submit
               </button>
             </form>
           </div>

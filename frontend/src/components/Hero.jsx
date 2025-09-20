@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="relative flex items-center justify-center min-h-[80vh] text-left
@@ -26,6 +28,7 @@ const Hero = () => {
           </p>
           <a
             href="#"
+            onClick={() => navigate(`/all-sweets`)}
             className="inline-flex text-[#8B2321] bg-white border-0 py-3 px-8 
                        focus:outline-none hover:bg-gray-100 rounded-full font-bold
                        transition-colors duration-300 shadow-lg transform hover:scale-105 animate-fadeIn delay-200"

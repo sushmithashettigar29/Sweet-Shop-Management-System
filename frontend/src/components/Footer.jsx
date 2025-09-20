@@ -21,7 +21,7 @@ const Footer = () => {
           />
           <button
             className="inline-flex text-white bg-[#8B2321] border-0 py-2 px-6
-            focus:outline-none hover:bg-[#FFC0CB] rounded-full font-semibold transition-colors duration-200 shadow-md"
+            focus:outline-none rounded-full font-semibold transition-colors duration-200 shadow-md cursor-pointer"
           >
             Subscribe
           </button>
@@ -33,7 +33,7 @@ const Footer = () => {
           {/* Logo and Link Columns */}
           <div className="flex flex-col md:flex-row md:space-x-16 w-full md:w-auto">
             <div className="mb-8 md:mb-0">
-              <h1 className="text-5xl font-extrabold text-[#FFDAB9] mb-2">
+              <h1 className="text-5xl font-extrabold text-white mb-2">
                 Sweet.
               </h1>
             </div>
@@ -117,7 +117,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:space-x-6 items-center mt-6 md:mt-0">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="w-10 h-10 bg-[#FFDAB9] text-[#8B2321] flex items-center justify-center rounded-lg shadow-lg hover:bg-white transition-colors duration-200 mb-4 md:mb-0"
+            className="w-10 h-10 bg-white text-[#8B2321] flex items-center justify-center rounded-lg shadow-lg cursor-pointer transition-colors duration-200 mb-4 md:mb-0"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -134,20 +134,20 @@ const Footer = () => {
               />
             </svg>
           </button>
-          <div className="flex flex-col md:flex-row md:space-x-6 text-[#FFDAB9]">
+          <div className="flex flex-col md:flex-row md:space-x-6 text-white">
             <a
               href="#"
-              className="hover:text-white transition-colors mb-2 md:mb-0"
+              className=" transition-colors mb-2 md:mb-0"
             >
               Cookies Policy
             </a>
             <a
               href="#"
-              className="hover:text-white transition-colors mb-2 md:mb-0"
+              className=" transition-colors mb-2 md:mb-0"
             >
               Legal Terms
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className=" transition-colors">
               Privacy Policy
             </a>
           </div>

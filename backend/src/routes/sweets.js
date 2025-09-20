@@ -13,13 +13,13 @@ const {
 } = require("../controllers/sweetController");
 const { protect, admin } = require("../middleware/authMiddleware");
 
-// 🟢 User routes (authenticated)
+// User routes (authenticated)
 router.get("/", getSweets);
 router.get("/search", searchSweets);
 router.get("/:id", protect, getSweetById);
 router.post("/:id/purchase", protect, purchaseSweet);
 
-// 🔴 Admin-only routes
+// Admin-only routes
 router.post("/", protect, admin, addSweet);
 router.put("/:id", protect, admin, updateSweet);
 router.delete("/:id", protect, admin, deleteSweet);
