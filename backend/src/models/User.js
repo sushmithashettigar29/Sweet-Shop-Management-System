@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
       name: String,
       price: Number,
       quantity: Number,
+      image: String,
       date: { type: Date, default: Date.now },
     },
   ],
