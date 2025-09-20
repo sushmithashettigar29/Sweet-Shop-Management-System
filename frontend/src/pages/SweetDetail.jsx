@@ -3,7 +3,6 @@ import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import PopularSweets from "../components/PopularSweets";
-import WaveBottom from "../components/WaveBottom";
 
 const SweetDetail = () => {
   const { id } = useParams();
@@ -115,8 +114,6 @@ const SweetDetail = () => {
         </div>
       </div>
       <PopularSweets text="Sweets you may Like"/>
-      <div className="mb-32" />  
-      <WaveBottom/>
     </div>
   );
 };

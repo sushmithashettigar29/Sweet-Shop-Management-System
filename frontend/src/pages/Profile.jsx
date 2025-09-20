@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
-import WaveBottom from "../components/WaveBottom";
 
 const Profile = () => {
   const { user, token } = useContext(AuthContext);
@@ -61,7 +60,8 @@ const Profile = () => {
                 Account Details
               </h3>
               <p className="text-lg text-gray-700 mt-2">
-                <strong>Role:</strong> <span className="text-gray-600">{user.role}</span>
+                <strong>Role:</strong>{" "}
+                <span className="text-gray-600">{user.role}</span>
               </p>
             </div>
           </div>
@@ -73,7 +73,9 @@ const Profile = () => {
             </h3>
             {purchases.length === 0 ? (
               <div className="text-center text-gray-600 py-8">
-                <p>You haven't purchased any sweets yet. Time to start shopping!</p>
+                <p>
+                  You haven't purchased any sweets yet. Time to start shopping!
+                </p>
                 <Link
                   to="/all-sweets"
                   className="mt-4 inline-block px-6 py-3 rounded-full font-semibold text-white bg-[#8B2321] hover:bg-[#6e1c1a] transition-colors"
@@ -85,29 +87,35 @@ const Profile = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {purchases.map((sweet) => (
                   <div
-              key={sweet._id}
-              className="bg-white rounded-none shadow-xl p-4 transform transition-transform duration-300 hover:scale-105"
-            >
-              <img
-                src={sweet.image || "https://placehold.co/400x550/F5C7A9/8B2321?text=Sweet"}
-                alt={sweet.name}
-                className="w-full h-56 object-cover rounded-none mb-4 shadow-md sm:h-64"
-              />
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="text-xl font-bold text-[#8B2321]">{sweet.name}</h3>
-                <p className="text-lg font-bold text-[#8B2321]">₹{sweet.price}</p>
-              </div>
-              <p className="text-gray-600 text-sm">
-                Quantity: {sweet.quantity}
-              </p>
-            </div>
+                    key={sweet._id}
+                    className="bg-white rounded-none shadow-xl p-4 transform transition-transform duration-300 hover:scale-105"
+                  >
+                    <img
+                      src={
+                        sweet.image ||
+                        "https://placehold.co/400x550/F5C7A9/8B2321?text=Sweet"
+                      }
+                      alt={sweet.name}
+                      className="w-full h-56 object-cover rounded-none mb-4 shadow-md sm:h-64"
+                    />
+                    <div className="flex justify-between items-center mb-2">
+                      <h3 className="text-xl font-bold text-[#8B2321]">
+                        {sweet.name}
+                      </h3>
+                      <p className="text-lg font-bold text-[#8B2321]">
+                        ₹{sweet.price}
+                      </p>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      Quantity: {sweet.quantity}
+                    </p>
+                  </div>
                 ))}
               </div>
             )}
           </div>
         </div>
       </div>
-      <WaveBottom />
     </div>
   );
 };

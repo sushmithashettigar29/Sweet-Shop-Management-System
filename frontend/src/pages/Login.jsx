@@ -1,8 +1,7 @@
 import { useState, useContext } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { loginUser } from "../api/auth";
 import { AuthContext } from "../context/AuthContext";
-import WaveBottom from "../components/WaveBottom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -29,7 +28,7 @@ const Login = () => {
 
   return (
     <div className="relative flex min-h-screen bg-[#FDF0D5] font-sans overflow-hidden">
-      <div className="flex w-full flex-col md:flex-row items-center justify-center p-8 md:p-10 mb-20">
+      <div className="flex w-full flex-col md:flex-row items-center justify-center p-8 md:p-10">
         {/* Left section with hero text */}
         <div className="relative w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 text-center md:text-left">
           <div className="max-w-md">
@@ -112,9 +111,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
-      {/* Wavy bottom section */}
-      <WaveBottom/>
     </div>
   );
 };

@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { registerUser } from "../api/auth";
 import { AuthContext } from "../context/AuthContext";
-import WaveBottom from "../components/WaveBottom";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -29,7 +28,7 @@ const Register = () => {
 
   return (
     <div className="relative flex min-h-screen bg-[#FDF0D5] font-sans overflow-hidden">
-      <div className="flex w-full flex-col md:flex-row items-center justify-center p-8 md:p-10 mb-20">
+      <div className="flex w-full flex-col md:flex-row items-center justify-center p-8 md:p-10">
         {/* Left section with hero text */}
         <div className="relative w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 text-center md:text-left">
           <div className="max-w-md">
@@ -93,21 +92,6 @@ const Register = () => {
                 />
               </div>
 
-              {/* <div>
-                <label className="sr-only" htmlFor="role">
-                  Role
-                </label>
-                <select
-                  id="role"
-                  value={role}
-                  onChange={(e) => setRole(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFC7AE] focus:border-[#FFC7AE] transition-all"
-                >
-                  <option value="user">User</option>
-                  <option value="admin">Admin</option>
-                </select>
-              </div> */}
-
               <button
                 type="submit"
                 className="w-full bg-[#8B2321] text-white py-3 font-semibold cursor-pointer"
@@ -118,7 +102,7 @@ const Register = () => {
                 Already have an account?{" "}
                 <Link
                   to="/login"
-                  className="text-[#8B2321] font-semibold cursor-pointer underline" 
+                  className="text-[#8B2321] font-semibold cursor-pointer underline"
                 >
                   Login
                 </Link>
@@ -127,9 +111,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-
-      {/* Wavy bottom section */}
-      <WaveBottom/>
     </div>
   );
 };
