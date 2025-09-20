@@ -36,3 +36,162 @@ The project was developed following a TDD mindset: tests were written for critic
 - HTTP client: axios
 - Testing: Jest + Supertest (backend); React Testing Library / Jest (frontend)
 - Version control & CI: GitHub (commits include AI co-author metadata where AI-assisted)
+
+# Architecture
+High-level flow:
+**[React SPA] <--> [Express API (JWT auth, routes)] <--> [MongoDB]**
+    - API endpoints live under /api/*.
+    - Authentication middleware verifies JWT and injects req.user.
+    - Admin middleware checks req.user.role === 'admin'.
+
+# Getting Started (Local Development)
+## Prerequisites
+- Node.js (v16+ recommended) and npm or yarn
+- MongoDB: either a local MongoDB instance or MongoDB Atlas (connection URI)
+- Git
+
+
+## Repository Structure (Top Level)
+```
+/ Sweet-Shop-Management-System
+├─ backend/                # Express API
+│  ├─ src/
+│  └─ package.json
+├─ frontend/               # React app 
+│  ├─ src/
+│  └─ package.json
+└─ README.md        
+```
+
+## Environment Variables
+Backend .env file
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/candycloud
+JWT_SECRET=change_this_secret
+NODE_ENV=development
+JWT_EXPIRE=1d
+ADMIN_USERNAME=username-here
+ADMIN_PASSWORD=password-here
+```
+
+## Backend Setup & Run
+```
+# 1. cd into backend
+cd backend
+
+# 2. install dependencies
+npm install
+
+# 3. start in development (with nodemon)
+npm run dev
+```
+The API will be available at http://localhost:5000
+
+## Frontend Setup & Run
+```
+# 1. cd into frontend
+cd frontend
+
+# install frontend deps
+npm install
+
+# start frontend dev server
+npm run dev 
+```
+open http://localhost:3000 (or whatever the dev server reports)
+
+# API Reference / Endpoints
+All endpoints prefixed with /api. Replace http://localhost:5000 with your API_URL.
+
+## Auth
+- POST /api/auth/register — Register a new user
+
+    - Body: { "username": "jane", "password": "secret" }
+
+    - Response: { token, user }
+
+- POST /api/auth/login — Login existing user
+
+    - Body: { "username":"jane", "password":"secret" }
+
+    - Response: { token, user }
+
+- GET /api/auth/me — Protected. Returns current user (including purchases).
+
+    - Header: Authorization: Bearer <token>
+
+## Sweets (some endpoints protected — see middleware)
+- GET /api/sweets — Get all sweets
+
+- GET /api/sweets/search?name=...?category=...?minPrice=..&maxPrice=.. — Search sweets by name/category/price-range
+
+- GET /api/sweets/:id — Get sweet by id
+
+- POST /api/sweets — Admin Add new sweet. Body: { name, category, price, quantity, image }
+
+- PUT /api/sweets/:id — Admin Update sweet
+
+- DELETE /api/sweets/:id — Admin Delete sweet
+
+## Inventory / Actions
+- POST /api/sweets/:id/purchase — Purchase a sweet
+
+    - Protected: user must be authenticated
+
+    - Body: { quantity: <number> }
+
+    - Effects:
+
+        - Decrease sweet.quantity by quantity (validated)
+
+        - Add purchase record to user.purchases with name, price, quantity, image, and total
+
+- POST /api/sweets/:id/restock — Restock sweet (Admin only)
+
+    - Body: { quantity: <number> }
+
+# Database Schema
+## User
+```
+{
+  username: { type: String, unique: true, required: true },
+  password: { type: String, required: true },
+  role: { type: String, enum: ["admin", "user"], default: "user" },
+  purchases: [
+    {
+      name: String,
+      price: Number,
+      quantity: Number,
+      image: String,
+      total:Number,
+      date: { type: Date, default: Date.now },
+    },
+  ]
+}
+```
+## Sweet
+```
+{
+    name: { type: String, required: true },
+    category: { type: String },
+    price: { type: Number, required: true },
+    quantity: { type: Number, default: 0 },
+    image: { type: String }
+}
+```
+
+# My AI Usage
+This project used AI tools to help speed up scaffolding, brainstorming, debugging, and writing tests. I have been transparent about where AI assisted me and included co-author notes in relevant commits.
+## Tools Used
+- ChatGPT (OpenAI): This tool was used for backend development and project planning.
+- Gemini (Google): This tool was used specifically for UI design.
+
+## How I Used Them
+- I used these AI tools as a co-pilot throughout the development process:
+Project Planning and Backend Logic (ChatGPT): I leveraged ChatGPT to brainstorm the initial idea and plan the overall project architecture. It helped in drafting the API contract and endpoint structures, which laid the foundation for the backend. When implementing the backend logic, I used ChatGPT to generate boilerplate code and to help debug issues, such as interpreting Axios errors and suggesting fixes. For several test cases, I asked ChatGPT to propose edge cases and sample test code, which I then manually edited and ran locally.
+
+- UI Design (Gemini): For the frontend, I used Gemini to brainstorm UI design ideas. It provided suggestions for layout, color schemes, and component styling, helping me create a visually appealing and user-friendly interface.
+
+## Reflection on AI's Impact
+AI tools significantly accelerated the initial development phase by handling repetitive and boilerplate tasks. This allowed me to focus my time and effort on the core business logic, testing, and refining the user experience. While AI provided the initial code and ideas, I was responsible for reviewing, modifying, and integrating the code to ensure it met project requirements and followed best practices. The final code and its functionality are my own work, augmented by these modern tools. I maintained transparency by including an AI co-author trailer in relevant commits, as documented in the project's commit history.
