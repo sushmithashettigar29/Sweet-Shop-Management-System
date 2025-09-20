@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const PopularSweets = () => {
+const PopularSweets = ({text}) => {
   const [sweets, setSweets] = useState([]);
   const navigate = useNavigate();
 
@@ -23,10 +23,10 @@ const PopularSweets = () => {
   }, []);
 
   return (
-    <section className="py-16 px-6 sm:px-12 md:px-24 bg-[#FFDAB9]">
+    <section className="py-16 px-6 sm:px-12 md:px-24 bg-[#FDF0D5]">
       <div className="container mx-auto">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-[#8B2321] text-center mb-10">
-          🍪 Popular Sweets
+          🍪 {text}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {sweets.map((sweet) => (
