@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
@@ -14,6 +13,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SweetDetail from "./pages/SweetDetail";
+import AllSweets from "./pages/AllSweets";
 
 function App() {
   return (
@@ -23,16 +23,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
-        {/* User dashboard */}
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
 
         {/* Admin dashboard */}
         <Route
@@ -56,6 +46,7 @@ function App() {
 
         {/* Sweet detail */}
         <Route path="/sweets/:id" element={<SweetDetail />} />
+        <Route path="/all-sweets" element={<AllSweets/>}/>
 
         {/* Catch all */}
         <Route path="*" element={<Navigate to="/" />} />
