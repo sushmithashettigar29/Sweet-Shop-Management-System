@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SweetDetail from "./pages/SweetDetail";
 import AllSweets from "./pages/AllSweets";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         {/* Sweet detail */}
         <Route path="/sweets/:id" element={<SweetDetail />} />
         <Route path="/all-sweets" element={<AllSweets/>}/>
+        <Route path="/contact" element={<Contact/>}/>
 
         {/* Catch all */}
         <Route path="*" element={<Navigate to="/" />} />
