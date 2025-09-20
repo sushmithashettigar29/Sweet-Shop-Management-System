@@ -7,6 +7,7 @@ import {
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminDashboard from "./pages/AdminDashboard";
+import AddSweet from "./pages/AddSweet";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
@@ -22,21 +23,16 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/all-sweets" element={<AllSweets />} />
+        <Route path="/sweets/:id" element={<SweetDetail />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
 
-        {/* Admin dashboard */}
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute adminOnly={true}>
-              <AdminDashboard />
-            </ProtectedRoute>
-          }
-        />
-
-        {/* Profile */}
+        {/* Protected Routes */}
         <Route
           path="/profile"
           element={
@@ -46,17 +42,27 @@ function App() {
           }
         />
 
-        {/* Sweet detail */}
-        <Route path="/sweets/:id" element={<SweetDetail />} />
-        <Route path="/all-sweets" element={<AllSweets/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="/about" element={<About/>}/>
+        {/* Admin Routes */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute adminOnly={true}>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/add"
+          element={
+            <ProtectedRoute adminOnly={true}>
+              <AddSweet />
+            </ProtectedRoute>
+          }
+        />
 
-        {/* Catch all */}
+        {/* Catch-all */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-
-      {/* Footer outside Routes */}
       <Footer />
     </Router>
   );
