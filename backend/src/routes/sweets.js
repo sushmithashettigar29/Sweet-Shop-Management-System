@@ -15,7 +15,7 @@ const { protect, admin } = require("../middleware/authMiddleware");
 
 // 🟢 User routes (authenticated)
 router.get("/", getSweets);
-router.get("/search", protect, searchSweets);
+router.get("/search", searchSweets);
 router.get("/:id", protect, getSweetById);
 router.post("/:id/purchase", protect, purchaseSweet);
 
