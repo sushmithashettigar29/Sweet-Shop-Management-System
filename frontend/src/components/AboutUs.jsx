@@ -2,11 +2,11 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="font-sans text-[#FCE4EC] bg-[#8B2321] min-h-screen py-16 px-6 sm:px-12 md:px-24">
+    <div className="font-sans text-[#FDF0D5] bg-[#8B2321] min-h-screen py-16 px-6 sm:px-12 md:px-24">
       {/* Hero Section */}
             {/* "About Us" Title Section */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl sm:text-6xl font-extrabold text-[#FFDAB9] mb-4 leading-tight tracking-tight">
+        <h1 className="text-5xl sm:text-6xl font-extrabold text-[#FDF0D5] mb-4 leading-tight tracking-tight">
           About Us
         </h1>
         <p className="text-xl sm:text-2xl text-white max-w-3xl mx-auto">
@@ -18,7 +18,7 @@ const AboutUs = () => {
       <div className="flex flex-col md:flex-row justify-between items-center space-y-12 md:space-y-0 md:space-x-12 mb-20">
         {/* Left Section - Hero Text */}
         <div className="w-full md:w-1/2 text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#FFDAB9] mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#FDF0D5] mb-6 leading-tight">
             Our Story, Our Sweetness
           </h1>
           <p className="text-white text-lg max-w-lg mx-auto md:mx-0">
@@ -32,7 +32,7 @@ const AboutUs = () => {
         <div className="w-full md:w-1/2 flex flex-col items-center">
           <div className="w-full relative">
             <img
-              src="https://placehold.co/800x600/F5C7A9/8B2321?text=A+Pile+of+Candy"
+              src="https://placehold.co/800x600/FDF0D5/FDF0D5?text=A+Pile+of+Candy"
               alt="A large pile of assorted candies"
               className="w-full h-auto object-cover rounded-3xl shadow-2xl transform rotate-2"
             />
@@ -47,7 +47,7 @@ const AboutUs = () => {
 
       {/* Philosophy Section */}
            {/* Philosophy Section */}
-      <div className="relative bg-[#FFDAB9] py-16 px-6 sm:px-12 md:px-20">
+      <div className="relative bg-[#FDF0D5] py-16 px-6 sm:px-12 md:px-20">
         <div className="text-center md:text-left mx-auto max-w-4xl text-[#8B2321]">
           <h2 className="text-3xl font-bold mb-4">
             The Art of Confectionery
@@ -63,7 +63,7 @@ const AboutUs = () => {
 
             {/* Why Us? Section */}
       <div className="mt-16 text-center">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-[#FFDAB9] mb-12 leading-tight tracking-tight">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-[#FDF0D5] mb-12 leading-tight tracking-tight">
           Why Choose Us?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
