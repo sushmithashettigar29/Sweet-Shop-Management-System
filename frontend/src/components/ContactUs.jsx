@@ -46,7 +46,7 @@ const ContactUs = () => {
 
   return (
     <div className="relative font-sans">
-      <section className="py-16 px-6 sm:px-12 md:px-24 bg-[#FFDAB9]">
+      <section className="py-16 px-6 sm:px-12 md:px-24 bg-[#FDF0D5]">
         <div className="relative w-full md:w-3/4 max-w-5xl mx-auto flex flex-col md:flex-row overflow-hidden z-10 mb-35">
           {/* Left side with contact info */}
           <div className="w-full md:w-2/5 p-8 text-white bg-[#8B2321] flex flex-col justify-center">
