@@ -37,12 +37,52 @@ The project was developed following a TDD mindset: tests were written for critic
 - Testing: Jest + Supertest (backend); React Testing Library / Jest (frontend)
 - Version control & CI: GitHub (commits include AI co-author metadata where AI-assisted)
 
+# Screenshots
+**Hero Section :**
+![Hero Section](/Screenshots/hero.png)
+
+**Popular Sweets :**
+![Popular Sweets](/Screenshots/popular-sweets.png)
+
+**About Us :**
+![About Us](/Screenshots/about-us.png)
+
+**Why Us :**
+![Why Us](/Screenshots/why-us.png)
+
+**Contact Us :**
+![Contact Us](/Screenshots/contactus.png)
+
+**Footer :**
+![Footer](/Screenshots/footer.png)
+
+**Login Page :**
+![Login page](/Screenshots/login.png)
+
+**Sign Up :**
+![Sign Up](/Screenshots/signup.png)
+
+**All Sweets :**
+![All Sweets](/Screenshots/all-sweets.png)
+
+**Buy Sweets :**
+![Buy Sweets](/Screenshots/buy-sweet.png)
+
+**Profile :**
+![Profile](/Screenshots/profile.png)
+
+**Admin Dashboard :**
+![Admin Dashboard](/Screenshots/admin-dashboard.png)
+
+**Add New Sweet :**
+![Add New Sweet](/Screenshots/add-new-sweet.png)
+
 # Architecture
 High-level flow:
-**[React SPA] <--> [Express API (JWT auth, routes)] <--> [MongoDB]**
-    - API endpoints live under /api/*.
-    - Authentication middleware verifies JWT and injects req.user.
-    - Admin middleware checks req.user.role === 'admin'.
+## [React SPA] <--> [Express API (JWT auth, routes)] <--> [MongoDB]
+- API endpoints live under /api/*.
+-  Authentication middleware verifies JWT and injects req.user.
+- Admin middleware checks req.user.role === 'admin'.
 
 # Getting Started (Local Development)
 ## Prerequisites
