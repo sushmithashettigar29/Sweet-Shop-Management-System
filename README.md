@@ -180,6 +180,22 @@ All endpoints prefixed with /api. Replace http://localhost:5000 with your API_UR
     image: { type: String }
 }
 ```
+# Testing (TDD) & Test Reports
+- The project follows Test-Driven Development principles. Backend tests typically cover:
+- Auth flows (register / login / JWT)
+- Protected routes (ensuring unauthorized access is blocked)
+- Sweets CRUD endpoints (create / read / update / delete)
+- Purchase flow (stock deduction, user purchase record)
+- Search endpoint (filters and price-range)
+## Run Backend Tests
+```
+cd backend
+npm install
+npm test
+```
+## Deployment
+I deployed the project using Vercel
+
 
 # My AI Usage
 This project used AI tools to help speed up scaffolding, brainstorming, debugging, and writing tests. I have been transparent about where AI assisted me and included co-author notes in relevant commits.
@@ -195,3 +211,14 @@ Project Planning and Backend Logic (ChatGPT): I leveraged ChatGPT to brainstorm 
 
 ## Reflection on AI's Impact
 AI tools significantly accelerated the initial development phase by handling repetitive and boilerplate tasks. This allowed me to focus my time and effort on the core business logic, testing, and refining the user experience. While AI provided the initial code and ideas, I was responsible for reviewing, modifying, and integrating the code to ensure it met project requirements and followed best practices. The final code and its functionality are my own work, augmented by these modern tools. I maintained transparency by including an AI co-author trailer in relevant commits, as documented in the project's commit history.
+
+## Commit / Git Conventions & AI Co-authorship Example
+Use small, focused commits with messages describing what and why. If you used AI for a commit, add the co-author trailer at the end of the commit message:
+` Co-authored-by: <AI Tool Name> <AI@users.noreply.github.com>
+
+Example commit (when using git commit -m):
+```
+feat: implement user register endpoint
+Used ChatGPT to draft input validation and error handling. Adjusted logic and tests manually.
+Co-authored-by: ChatGPT <chatgpt@openai.com>
+```
