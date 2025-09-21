@@ -1,97 +1,129 @@
 # Sweet Shop Management System
 
-This project is a full-stack Sweet Shop Management System, built as a TDD (Test-Driven Development) kata. It demonstrates skills in API development, database management, frontend implementation, and modern development workflows, including the responsible use of AI tools.
+This project is a full-stack **Sweet Shop Management System**, built as a **TDD (Test-Driven Development) kata**.  
+It demonstrates skills in API development, database management, frontend implementation, and modern development workflows, including the responsible use of AI tools.
 
-The application allows for the management of sweet inventory and provides a public-facing storefront for users to view and purchase sweets. It features a robust RESTful backend API and a modern Single-Page Application (SPA) frontend. The project was developed following a TDD mindset: tests were written for critical backend flows (auth, purchase, stock checks) prior to implementation.
+The application allows for the management of sweet inventory and provides a public-facing storefront for users to view and purchase sweets.  
+It features a robust RESTful backend API and a modern Single-Page Application (SPA) frontend.
 
-Live Demo - [Live Project Link](https://sweet-ten.vercel.app/)
+Live Demo 👉 [Sweet Shop on Vercel](https://sweet-ten.vercel.app/)
 
-# Project Overview
-This application is a small e-commerce-style Sweet Shop. Users can register and log in, browse sweets, search and filter sweets, and purchase sweets (which lowers stock and records purchases in the user's profile). Admin users can create, update, delete, and restock sweets via protected endpoints and an admin UI.
+---
 
-The project was developed following a TDD mindset: tests were written for critical backend flows (auth, purchase, stock checks) prior to implementation. See the test reports section for details.
+## 📖 Project Overview
+This application is a small e-commerce-style Sweet Shop.
 
-# Features
-- User registration and login (JWT authentication).
-- Role-based access control (admin vs user).
-- Add / Update / Delete sweets (admin).
-- Get all sweets (public/protected depending on server config).
-- Search sweets by name, category, and price range.
-- Purchase sweets (quantity validated and decreased; purchase recorded on user).
-- Restock sweets (admin).
-- Responsive React SPA:
+- Users can register and log in.
+- Browse sweets, search & filter sweets.
+- Purchase sweets (lowers stock & records purchases in profile).
+- Admin users can **create, update, delete, and restock** sweets.
 
-    - Views: Home, All Sweets, Sweet Detail, Profile, Admin Dashboard, Add Sweet, About, Contact.
-    - Search and filter with instant (debounced) searching.
-    - Purchase flow in Sweet Detail; disabled Purchase button if out of stock.
-    - Admin UI for CRUD operations and restocking.
-- Test coverage for backend endpoints (unit + integration / API tests).
+The project was developed following a **TDD mindset**:  
+Tests were written for critical backend flows (auth, purchase, stock checks) **before** implementation.  
+See the **Test Reports** section for details.
 
-# Tech Stack
-- Backend: Node.js + Express
-- Database: MongoDB (Atlas or local)
-- Auth: JWT
-- Frontend: React (Vite / Create React App — repo uses React app structure)
-- Styling: Tailwind CSS (utility-first styling)
-- HTTP client: axios
-- Testing: Jest + Supertest (backend); React Testing Library / Jest (frontend)
-- Version control & CI: GitHub (commits include AI co-author metadata where AI-assisted)
+---
 
-# Screenshots
-**Hero Section :**
+## ✨ Features
+
+### User
+- ✅ Register & Login (JWT authentication)
+- ✅ View sweets
+- ✅ Search/filter sweets (name, category, price range)
+- ✅ Purchase sweets (with stock validation, purchase history stored in profile)
+
+### Admin
+- 🔑 Role-based access control (admin vs user)
+- 🔑 Add / Update / Delete sweets
+- 🔑 Restock sweets
+
+### Frontend
+- Built with **React + Tailwind CSS**
+- Pages: `Home`, `All Sweets`, `Sweet Detail`, `Profile`, `Admin Dashboard`, `Add Sweet`, `About`, `Contact`
+- Debounced searching & filtering
+- Responsive SPA with clean UI
+- Purchase flow (disabled when out of stock)
+
+### Testing
+- Jest + Supertest for backend
+- React Testing Library for frontend
+- High coverage for critical paths (auth, purchase, inventory)
+
+---
+
+## 🛠 Tech Stack
+- **Backend:** Node.js + Express  
+- **Database:** MongoDB (local / Atlas)  
+- **Auth:** JWT  
+- **Frontend:** React + Vite  
+- **Styling:** Tailwind CSS  
+- **HTTP Client:** axios  
+- **Testing:** Jest, Supertest, React Testing Library  
+- **Deployment:** Vercel  
+- **Version Control:** GitHub (AI co-author metadata where AI-assisted)  
+
+---
+
+## 📸 Screenshots
+### Hero Section  
 ![Hero Section](/Screenshots/hero.png)
 
-**Popular Sweets :**
+### Popular Sweets  
 ![Popular Sweets](/Screenshots/popular-sweets.png)
 
-**About Us :**
+### About Us  
 ![About Us](/Screenshots/about-us.png)
 
-**Why Us :**
+### Why Us :
 ![Why Us](/Screenshots/why-us.png)
 
-**Contact Us :**
+### Contact Us :
 ![Contact Us](/Screenshots/contactus.png)
 
-**Footer :**
+### Footer :
 ![Footer](/Screenshots/footer.png)
 
-**Login Page :**
+### Login Page :
 ![Login page](/Screenshots/login.png)
 
-**Sign Up :**
+### Sign Up :
 ![Sign Up](/Screenshots/signup.png)
 
-**All Sweets :**
+### All Sweets :
 ![All Sweets](/Screenshots/all-sweets.png)
 
-**Buy Sweets :**
+### Buy Sweets :
 ![Buy Sweets](/Screenshots/buy-sweet.png)
 
-**Profile :**
+### Profile :
 ![Profile](/Screenshots/profile.png)
 
-**Admin Dashboard :**
+### Admin Dashboard :
 ![Admin Dashboard](/Screenshots/admin-dashboard.png)
 
-**Add New Sweet :**
+### Add New Sweet :
 ![Add New Sweet](/Screenshots/add-new-sweet.png)
 
-# Architecture
+---
+
+## 🏗 Architecture
 High-level flow:
-## [React SPA] <--> [Express API (JWT auth, routes)] <--> [MongoDB]
+[React SPA] <--> [Express API (JWT auth, routes)] <--> [MongoDB]
 - API endpoints live under /api/*.
 -  Authentication middleware verifies JWT and injects req.user.
 - Admin middleware checks req.user.role === 'admin'.
 
-# Getting Started (Local Development)
-## Prerequisites
+---
+
+## 🚀 Getting Started (Local Development)
+
+### Prerequisites
 - Node.js (v16+ recommended) and npm or yarn
 - MongoDB: either a local MongoDB instance or MongoDB Atlas (connection URI)
 - Git
 
 
-## Repository Structure (Top Level)
+### Repository Structure (Top Level)
 ```
 / Sweet-Shop-Management-System
 ├─ backend/                # Express API
@@ -103,7 +135,7 @@ High-level flow:
 └─ README.md        
 ```
 
-## Environment Variables
+### Environment Variables
 Backend .env file
 ```
 PORT=5000
@@ -115,7 +147,7 @@ ADMIN_USERNAME=username-here
 ADMIN_PASSWORD=password-here
 ```
 
-## Backend Setup & Run
+### Backend Setup & Run
 ```
 # 1. cd into backend
 cd backend
@@ -128,7 +160,7 @@ npm run dev
 ```
 The API will be available at http://localhost:5000
 
-## Frontend Setup & Run
+### Frontend Setup & Run
 ```
 # 1. cd into frontend
 cd frontend
@@ -141,103 +173,74 @@ npm run dev
 ```
 open http://localhost:3000 (or whatever the dev server reports)
 
-# API Reference / Endpoints
+### API Reference / Endpoints
 All endpoints prefixed with /api. Replace http://localhost:5000 with your API_URL.
 
-## Auth
-- POST /api/auth/register — Register a new user
+### Auth
+- **POST /api/auth/register** → Register user
+- **POST /api/auth/login** → Login user
+- **GET /api/auth/me** → Get current user (with purchases)
 
-    - Body: { "username": "jane", "password": "secret" }
+### Sweets (some endpoints protected — see middleware)
+- **GET /api/sweets** → All sweets
+- **GET /api/sweets/search?name=&category=&minPrice=&maxPrice=** → Search sweets
+- **GET /api/sweets/:id** → Get sweet by ID
+- **POST /api/sweets** → Admin add sweet
+- **PUT /api/sweets/:id** → Admin update sweet
+- **DELETE /api/sweets/:id** → Admin delete sweet
 
-    - Response: { token, user }
+### Inventory / Actions
+- **POST /api/sweets/:id/purchase** → Purchase sweet
+- **POST /api/sweets/:id/restock** → Restock sweet (Admin only)
 
-- POST /api/auth/login — Login existing user
-
-    - Body: { "username":"jane", "password":"secret" }
-
-    - Response: { token, user }
-
-- GET /api/auth/me — Protected. Returns current user (including purchases).
-
-    - Header: Authorization: Bearer <token>
-
-## Sweets (some endpoints protected — see middleware)
-- GET /api/sweets — Get all sweets
-
-- GET /api/sweets/search?name=...?category=...?minPrice=..&maxPrice=.. — Search sweets by name/category/price-range
-
-- GET /api/sweets/:id — Get sweet by id
-
-- POST /api/sweets — Admin Add new sweet. Body: { name, category, price, quantity, image }
-
-- PUT /api/sweets/:id — Admin Update sweet
-
-- DELETE /api/sweets/:id — Admin Delete sweet
-
-## Inventory / Actions
-- POST /api/sweets/:id/purchase — Purchase a sweet
-
-    - Protected: user must be authenticated
-
-    - Body: { quantity: <number> }
-
-    - Effects:
-
-        - Decrease sweet.quantity by quantity (validated)
-
-        - Add purchase record to user.purchases with name, price, quantity, image, and total
-
-- POST /api/sweets/:id/restock — Restock sweet (Admin only)
-
-    - Body: { quantity: <number> }
-
-# Database Schema
-## User
+### 🗄 Database Schema
+### User
 ```
 {
-  username: { type: String, unique: true, required: true },
-  password: { type: String, required: true },
-  role: { type: String, enum: ["admin", "user"], default: "user" },
-  purchases: [
+  "username": "string",
+  "password": "string",
+  "role": "admin | user",
+  "purchases": [
     {
-      name: String,
-      price: Number,
-      quantity: Number,
-      image: String,
-      total:Number,
-      date: { type: Date, default: Date.now },
-    },
+      "name": "string",
+      "price": "number",
+      "quantity": "number",
+      "image": "string",
+      "total": "number",
+      "date": "Date"
+    }
   ]
 }
+
 ```
-## Sweet
+### Sweet
 ```
 {
-    name: { type: String, required: true },
-    category: { type: String },
-    price: { type: Number, required: true },
-    quantity: { type: Number, default: 0 },
-    image: { type: String }
+  "name": "string",
+  "category": "string",
+  "price": "number",
+  "quantity": "number",
+  "image": "string"
 }
+
 ```
-# Testing (TDD) & Test Reports
+## 🧪 Testing (TDD) & Test Reports
 - The project follows Test-Driven Development principles. Backend tests typically cover:
 - Auth flows (register / login / JWT)
 - Protected routes (ensuring unauthorized access is blocked)
 - Sweets CRUD endpoints (create / read / update / delete)
 - Purchase flow (stock deduction, user purchase record)
 - Search endpoint (filters and price-range)
-## Run Backend Tests
+### Run Backend Tests
 ```
 cd backend
 npm install
 npm test
 ```
-## Deployment
-I deployed the project using Vercel
+### 🌐 Deployment
+Deployed via Vercel 👉 [Live Demo](https://sweet-ten.vercel.app/)
 
-
-# My AI Usage
+## 🤖 My AI Usage
 This project used AI tools to help speed up scaffolding, brainstorming, debugging, and writing tests. I have been transparent about where AI assisted me and included co-author notes in relevant commits.
 ## Tools Used
 - ChatGPT (OpenAI): This tool was used for backend development and project planning.
