@@ -193,6 +193,8 @@ All endpoints prefixed with /api. Replace http://localhost:5000 with your API_UR
 - **POST /api/sweets/:id/purchase** → Purchase sweet
 - **POST /api/sweets/:id/restock** → Restock sweet (Admin only)
 
+--- 
+
 ### 🗄 Database Schema
 ### User
 ```
@@ -224,6 +226,8 @@ All endpoints prefixed with /api. Replace http://localhost:5000 with your API_UR
 }
 
 ```
+---
+
 ## 🧪 Testing (TDD) & Test Reports
 - The project follows Test-Driven Development principles. Backend tests typically cover:
 - Auth flows (register / login / JWT)
@@ -237,8 +241,13 @@ cd backend
 npm install
 npm test
 ```
+---
+
 ### 🌐 Deployment
 Deployed via Vercel 👉 [Live Demo](https://sweet-ten.vercel.app/)
+
+---
+
 
 ## 🤖 My AI Usage
 This project used AI tools to help speed up scaffolding, brainstorming, debugging, and writing tests. I have been transparent about where AI assisted me and included co-author notes in relevant commits.
@@ -254,6 +263,8 @@ Project Planning and Backend Logic (ChatGPT): I leveraged ChatGPT to brainstorm 
 
 ## Reflection on AI's Impact
 AI tools significantly accelerated the initial development phase by handling repetitive and boilerplate tasks. This allowed me to focus my time and effort on the core business logic, testing, and refining the user experience. While AI provided the initial code and ideas, I was responsible for reviewing, modifying, and integrating the code to ensure it met project requirements and followed best practices. The final code and its functionality are my own work, augmented by these modern tools. I maintained transparency by including an AI co-author trailer in relevant commits, as documented in the project's commit history.
+
+---
 
 ## Commit / Git Conventions & AI Co-authorship Example
 Use small, focused commits with messages describing what and why. If you used AI for a commit, add the co-author trailer at the end of the commit message:
